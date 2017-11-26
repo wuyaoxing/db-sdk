@@ -18,22 +18,12 @@ database schema in frontEnd.
 `--🗎 package.json
 ```
 
-```
-🗁 db-store
-|--🗁 doc
-|--🗁 src
-    `--🗁 testComponent
-    |  |--🗎 index.vue
-    |  `--🗎 testComponent.md
-
-```
-
 ## vue-store
 
 ```bash
 🗁 vue-store         ## vue-store
 |--🗁 src
-|  |--🗁 store
+|  |--🗁 core
 |  |  |--🗁 apis
 |  |  |--🗁 fetchs
 |  |  |--🗁 models
