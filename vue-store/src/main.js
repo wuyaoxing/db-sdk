@@ -2,8 +2,12 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import { sync } from 'vuex-router-sync'
+import store from './core/storage'
 import router from './router'
-import store from '@/core/storage'
+
+const unsync = sync(store, router)
+unsync()
 
 Vue.config.productionTip = false
 
