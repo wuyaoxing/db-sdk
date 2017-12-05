@@ -6,10 +6,10 @@ import { sync } from 'vuex-router-sync'
 import store from './core/storage'
 import router from './router'
 
-const unsync = sync(store, router)
-unsync()
-
 Vue.config.productionTip = false
+
+sync(store, router)
+// unsync()
 
 /* eslint-disable no-new */
 new Vue({

@@ -11,6 +11,9 @@ export default {
   computed: {
     getStore () {
       return this.$store.state
+    },
+    getStoreRoute () {
+      return this.$store.state.route
     }
   }
 }
