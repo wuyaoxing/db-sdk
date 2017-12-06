@@ -1,33 +1,27 @@
 export const KanbanSchema = {
-  id: String,
-  orgId: String,
-  no: Number,
-  name: String,
-  descr: String,
-  creator: String,
+  archiveDate: String,
+  archiveUser: String,
+  archived: Number,
   created: String,
-  visibility: Number,
-  archived: Boolean,
-  state: Number,
-  permission: String,
-  enablePlanpoint: Boolean,
-  enableTaskpoint: Boolean,
-  enableChecklist: Boolean
+  creator: String,
+  descr: String,
+  id: String,
+  name: String,
+  personal: String,
+  projectId: String,
+  columnlist: Array
 }
 
 export const KanbanBaseSchema = {
-  id: '',
-  orgId: '',
-  no: 0,
-  name: '',
-  descr: '',
-  creator: '',
+  archiveDate: '',
+  archiveUser: '',
+  archived: 0,
   created: '',
-  visibility: 0,
-  archived: false,
-  state: 0,
-  permission: '11111111',
-  enablePlanpoint: false,
-  enableTaskpoint: false,
-  enableChecklist: false
+  creator: '',
+  descr: '',
+  id: '',
+  name: '',
+  personal: '',
+  projectId: '',
+  columnlist: []
 }

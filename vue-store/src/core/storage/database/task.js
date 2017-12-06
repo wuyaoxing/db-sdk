@@ -1,8 +1,6 @@
 export default {
-  state () {
-    return {
-      tasks: {}
-    }
+  state: {
+    tasks: {}
   },
   mutations: {
     resetTask (state) {

@@ -1,14 +1,11 @@
 export default {
-  state () {
-    return {
-      kanbanColumns: {}
-    }
+  state: {
+    kanbanColumns: {}
   },
   mutations: {
     resetKanbanColumn (state) {
       state.kanbanColumns = {}
     }
   },
-  actions: {
-  }
+  actions: {}
 }

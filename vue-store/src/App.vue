@@ -10,11 +10,14 @@ export default {
   name: 'app',
   computed: {
     getStore () {
-      return this.$store.state
+      return this.$store.getters.getValues('projects')
     },
     getStoreRoute () {
       return this.$store.state.route
     }
+  },
+  mounted () {
+    console.log(this.getStore)
   }
 }
 </script>

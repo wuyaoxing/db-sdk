@@ -4,10 +4,8 @@
 e.g
 ```
 export default {
-  state () {
-    return {
-      projects: _.keyBy(projects, item => item.id)
-    }
+  state: {
+    projects: _.keyBy(projects, item => item.id)
   },
   mutations: {
     resetProject (state) {
