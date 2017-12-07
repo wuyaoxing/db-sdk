@@ -1,5 +1,5 @@
 ## database
-将前端数据进行拆分，建立对应keyById关系，以及实际业务relation。
+将前端数据进行拆分，建立对应keyById关系。
 
 e.g
 ```

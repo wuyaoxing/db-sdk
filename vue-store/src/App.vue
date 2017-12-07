@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    {{getStore}}
     <router-view/>
+    {{getStore}}
   </div>
 </template>
 
@@ -14,10 +14,13 @@ export default {
     },
     getStoreRoute () {
       return this.$store.state.route
+    },
+    getStoreProject () {
+      return this.$store.getters.getProject('0T9XEsuY2Pw')
     }
   },
   mounted () {
-    console.log(this.getStore)
+    // console.log(this.getStore, this.getStoreProject)
   }
 }
 </script>

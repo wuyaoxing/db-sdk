@@ -1,5 +1,6 @@
 import { PRELOAD } from '@/appConfig'
 import { ProjectBaseSchema } from '@/core/schemas/project'
+import Vue from 'vue'
 
 import _ from 'lodash'
 
@@ -30,16 +31,13 @@ export default {
   },
   mutations: {
     resetProject (state) {
-      // state.kanbanKeyList = {}
-      // state.kanbanList = {}
-      state.kbcKeyList = {}
-      state.kbcList = {}
-      state.kbcTaskList = {}
-      state.taskList = {}
-      state.projectFile = {}
-      state.projectPagination = {
-        files: {}
-      }
+      state.projects = {}
+    },
+    updateProjectName (state) {
+      state.projects['0T9XEsuY2Pw'].name = 789789
+    },
+    addProject (state) {
+      Vue.set(state.projects, '0T9XEsuY2Pw0T9X', state.projects['0T9XEsuY2Pw'])
     }
   },
   actions: {}

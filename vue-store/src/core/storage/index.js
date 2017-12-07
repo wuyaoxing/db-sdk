@@ -4,6 +4,7 @@ import mutations from './mutations'
 import actions from './actions'
 
 import database from './database'
+import workspace from './workspace'
 
 Vue.use(Vuex)
 
@@ -13,6 +14,7 @@ export default new Vuex.Store({
   mutations,
   actions,
   modules: {
-    database
+    database,
+    workspace
   }
 })
