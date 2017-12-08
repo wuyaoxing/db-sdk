@@ -1,22 +1,31 @@
 <template>
   <div id="app">
     <router-view/>
-    {{getStore}}
+    {{getStoreProject}}
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex'
+
 export default {
   name: 'app',
   computed: {
-    getStore () {
-      return this.$store.getters.getValues('projects')
-    },
-    getStoreRoute () {
-      return this.$store.state.route
-    },
+    ...mapState({
+      getStoreRoute: 'route'
+    }),
+    ...mapGetters([
+      'getProject',
+      'getValues'
+    ]),
     getStoreProject () {
-      return this.$store.getters.getProject('0T9XEsuY2Pw')
+      return this.getProject('0T9XEsuY2Pw')
+    },
+    getStoreKanbans () {
+      return this.getValues('kanbans')
+    },
+    getStoreProjects () {
+      return this.getValues('projects')
     }
   },
   mounted () {

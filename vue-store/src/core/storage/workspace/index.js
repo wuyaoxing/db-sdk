@@ -20,7 +20,7 @@ export default {
       const { database: { projects } } = rootState
       const { getValues } = getters
       const kanbanlist = getValues('kanbans')
-      return Object.assign({}, projects[projectId], { kanbans: kanbanlist })
+      return Object.assign({}, projects[projectId], { kanbanlist })
     }
   },
   mutations: {

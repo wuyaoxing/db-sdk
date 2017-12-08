@@ -26,8 +26,8 @@ export default {
     resetProject (state) {
       state.projects = {}
     },
-    updateProjectName (state) {
-      state.projects['0T9XEsuY2Pw'].name = 789789
+    updateProjectName (state, payload) {
+      state.projects['0T9XEsuY2Pw'].name = payload
     },
     addProject (state) {
       Vue.set(state.projects, '0T9XEsuY2Pw0T9X', state.projects['0T9XEsuY2Pw'])

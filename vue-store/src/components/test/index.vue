@@ -1,10 +1,13 @@
 <template>
   <div class="test">
+    <h1>{{ getStoreRoute }}</h1>
     <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
+import { mapState, mapGetters, mapMutations } from 'vuex'
+
 export default {
   name: 'test',
   data () {
@@ -13,14 +16,18 @@ export default {
     }
   },
   computed: {
-    getStore () {
-      return this.$store.getters.getValues('projects')
-    },
-    getStoreRoute () {
-      return this.$store.state.route
-    },
+    ...mapState({
+      getStoreRoute: 'route'
+    }),
+    ...mapGetters([
+      'getProject',
+      'getValues'
+    ]),
     getStoreProject () {
-      return this.$store.getters.getProject('0T9XEsuY2Pw')
+      return this.getProject('0T9XEsuY2Pw')
+    },
+    getStoreKanbans () {
+      return this.getValues('kanbans')
     }
   },
   watch: {
@@ -29,6 +36,14 @@ export default {
     }
   },
   methods: {
+    ...mapMutations([
+      'addProject',
+      'updateKanbanName',
+      'addKanban'
+    ]),
+    ...mapMutations({
+      updateProject: 'updateProjectName'
+    }),
     runtime () {
       console.time('test runtime')
       this.test = this.getStoreProject
@@ -39,34 +54,22 @@ export default {
         this.test = this.getStoreProject
       }
       console.timeEnd('test runtime1')
-    },
-    updateProjectName () {
-      this.$store.commit('updateProjectName')
-    },
-    addProject () {
-      this.$store.commit('addProject')
-    },
-    updateKanbanName () {
-      this.$store.commit('updateKanbanName')
-    },
-    addKanban () {
-      this.$store.commit('addKanban')
     }
   },
   mounted () {
     // this.runtime()
     setTimeout(() => {
-      this.updateProjectName()
+      this.updateProject('修改name去')
     }, 1000)
     // setTimeout(() => {
     //   this.addProject()
     // }, 1300)
     // setTimeout(() => {
-    //   this.updateKanbanName()
+    //   this.updateKanbanName('32vur8q5b94w')
     // }, 1400)
     // setTimeout(() => {
     //   this.addKanban()
-    // }, 1500)
+    // }, 1800)
     // console.log(this.getStore, this.getStoreProject)
   }
 }

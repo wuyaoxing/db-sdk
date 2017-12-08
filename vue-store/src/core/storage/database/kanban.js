@@ -18,11 +18,11 @@ export default {
     resetKanban (state) {
       state.kanbans = {}
     },
-    updateKanbanName (state) {
-      state.kanbans['0T9XEt7baOu'].name = 789789
+    updateKanbanName (state, payload) {
+      state.kanbans[payload].name = '修改看板name'
     },
     addKanban (state) {
-      Vue.set(state.projects, '0T9XEt7baOu0T9XEt7baOu', state.kanbans['0T9XEt7baOu'])
+      Vue.set(state.kanbans, '32vur8q5b94w32vur8q5b94w32vur8q5b94w32vur8q5b94w', state.kanbans['32vur8q5b94w'])
     }
   },
   actions: {}
