@@ -16,8 +16,7 @@ export const ProjectSchema = {
   enableTaskpoint: Boolean,
   enableChecklist: Boolean,
   stats: Object,
-  members: Array,
-  kanbanlist: Array
+  members: Array
 }
 
 export const ProjectBaseSchema = {
@@ -36,8 +35,7 @@ export const ProjectBaseSchema = {
   enableTaskpoint: false,
   enableChecklist: false,
   stats: {},
-  members: [],
-  kanbanlist: []
+  members: []
 }
 
 // const test = AlgebraicType({

@@ -1,5 +1,5 @@
 import { PRELOAD } from '@/appConfig'
-import { userBaseSchema } from '@/core/schemas/org'
+import { userBaseSchema } from '@/core/schemas/user'
 
 import { initState } from '../util'
 

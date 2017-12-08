@@ -1,5 +1,5 @@
 import { PRELOAD } from '@/appConfig'
-import { memberBaseSchema } from '@/core/schemas/org'
+import { memberBaseSchema } from '@/core/schemas/member'
 
 import { initState } from '../util'
 

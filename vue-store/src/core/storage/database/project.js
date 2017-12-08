@@ -4,27 +4,20 @@ import Vue from 'vue'
 
 import _ from 'lodash'
 
-const { projects, projectStats, kanbans } = PRELOAD
+const { projects, projectStats } = PRELOAD
 const initProjects = () => {
   const stats = _.keyBy(projectStats, item => item.projectId)
-  const kanbanlist = kanbans.reduce((acc, item) => {
-    if (!acc[item.projectId]) {
-      acc[item.projectId] = []
-    }
-    acc[item.projectId].push(item.id)
-    return acc
-  }, {})
   return projects.reduce((acc, val) => {
     const id = val.id
     acc[id] = {
       ...ProjectBaseSchema,
       ...val,
-      stats: stats[id],
-      kanbanlist: kanbanlist[id] || []
+      stats: stats[id]
     }
     return acc
   }, {})
 }
+
 export default {
   state: {
     projects: initProjects()

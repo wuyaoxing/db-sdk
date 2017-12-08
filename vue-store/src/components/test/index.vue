@@ -25,7 +25,7 @@ export default {
   },
   watch: {
     getStoreProject () {
-      this.runtime()
+      // this.runtime()
     }
   },
   methods: {
@@ -54,7 +54,7 @@ export default {
     }
   },
   mounted () {
-    this.runtime()
+    // this.runtime()
     setTimeout(() => {
       this.updateProjectName()
     }, 1000)

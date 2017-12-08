@@ -8,8 +8,7 @@ export const KanbanSchema = {
   id: String,
   name: String,
   personal: String,
-  projectId: String,
-  columnlist: Array
+  projectId: String
 }
 
 export const KanbanBaseSchema = {
@@ -22,6 +21,5 @@ export const KanbanBaseSchema = {
   id: '',
   name: '',
   personal: '',
-  projectId: '',
-  columnlist: []
+  projectId: ''
 }

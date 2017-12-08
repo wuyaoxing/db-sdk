@@ -1,4 +1,4 @@
-export const tasktypeSchema = {
+export const taskfieldSchema = {
   dataSourceId: String,
   dataSourceType: String,
   id: String,
@@ -7,7 +7,7 @@ export const tasktypeSchema = {
   type: Number
 }
 
-export const tasktypeBaseSchema = {
+export const taskfieldBaseSchema = {
   dataSourceId: '',
   dataSourceType: '',
   id: '',
