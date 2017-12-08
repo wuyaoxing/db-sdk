@@ -1,6 +1,9 @@
+import Vue from 'vue'
 import { PRELOAD } from '@/appConfig'
 import { ProjectBaseSchema } from '@/core/schemas/project'
-import Vue from 'vue'
+
+import { Action } from '../action-types'
+import { Mutation } from '../mutation-types'
 
 import _ from 'lodash'
 
@@ -26,12 +29,16 @@ export default {
     resetProject (state) {
       state.projects = {}
     },
-    updateProjectName (state, payload) {
-      state.projects['0T9XEsuY2Pw'].name = payload
+    [Mutation.PROJECT_UPDATE] (state, { data }) {
+      state.projects[data.projectId] = { ...state.projects[data.projectId], ...data }
     },
     addProject (state) {
       Vue.set(state.projects, '0T9XEsuY2Pw0T9X', state.projects['0T9XEsuY2Pw'])
     }
   },
-  actions: {}
+  actions: {
+    [Action.ProjectUpdate] (state, { data }) {
+      state.commit(Mutation.PROJECT_UPDATE, data)
+    }
+  }
 }

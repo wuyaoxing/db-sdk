@@ -1,4 +1,4 @@
-// import { AlgebraicType } from '@/core/utils/algebraic-type'
+// import AlgebraicType from '@/core/utils/algebraic-type'
 
 export const ProjectSchema = {
   id: String,

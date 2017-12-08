@@ -7,6 +7,7 @@
 
 <script>
 import { mapState, mapGetters, mapMutations } from 'vuex'
+import { MutationType } from '@/core/storage/mutation-types'
 
 export default {
   name: 'test',
@@ -41,9 +42,9 @@ export default {
       'updateKanbanName',
       'addKanban'
     ]),
-    ...mapMutations({
-      updateProject: 'updateProjectName'
-    }),
+    // ...mapMutations({
+    //   updateProject: [Mutation.PROJECT_UPDATE]
+    // }),
     runtime () {
       console.time('test runtime')
       this.test = this.getStoreProject
@@ -57,9 +58,10 @@ export default {
     }
   },
   mounted () {
+    console.log(MutationType.PROJECT_UPDATE({ data: { projectId: '0T9XEsuY2Pw', name: '修改name' } }))
     // this.runtime()
     setTimeout(() => {
-      this.updateProject('修改name去')
+      this.$store.commit(MutationType.PROJECT_UPDATE({ data: { projectId: '0T9XEsuY2Pw', name: '修改name' } }))
     }, 1000)
     // setTimeout(() => {
     //   this.addProject()

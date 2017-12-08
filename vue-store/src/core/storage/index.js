@@ -3,6 +3,8 @@ import Vuex from 'vuex'
 import mutations from './mutations'
 import actions from './actions'
 
+import router from './plugins/router'
+
 import database from './database'
 import workspace from './workspace'
 
@@ -13,6 +15,7 @@ export default new Vuex.Store({
   },
   mutations,
   actions,
+  plugins: [router],
   modules: {
     database,
     workspace
