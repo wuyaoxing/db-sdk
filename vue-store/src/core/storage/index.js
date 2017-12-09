@@ -5,7 +5,7 @@ import actions from './actions'
 
 import router from './plugins/router'
 
-import database from './database'
+import entities from './entities'
 import workspace from './workspace'
 
 Vue.use(Vuex)
@@ -17,7 +17,7 @@ export default new Vuex.Store({
   actions,
   plugins: [router],
   modules: {
-    database,
+    entities,
     workspace
   }
 })

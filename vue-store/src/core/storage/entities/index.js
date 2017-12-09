@@ -19,7 +19,7 @@ import _ from 'lodash'
 
 // const { projects, projectStats } = PRELOAD
 
-const database = {
+const entities = {
   org,
   user,
   member,
@@ -37,19 +37,19 @@ export default {
   state () {
     return {
       PRELOAD,
-      ...importProperties(database, 'state')
+      ...importProperties(entities, 'state')
     }
   },
   getters: {
     getValues: state => property => _.values(state[property])
   },
   mutations: {
-    ...importProperties(database, 'mutations')
+    ...importProperties(entities, 'mutations')
   },
   actions: {
-    ...importProperties(database, 'actions'),
-    resetDatabase (context) {
-      resetProperties(context, database)
+    ...importProperties(entities, 'actions'),
+    resetEntities (context) {
+      resetProperties(context, entities)
     }
   }
 }

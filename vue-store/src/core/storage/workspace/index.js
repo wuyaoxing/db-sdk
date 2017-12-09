@@ -17,7 +17,7 @@ export default {
   getters: {
     getProject: (state, getters, rootState) => projectId => {
       console.log(state, getters, rootState)
-      const { database: { projects } } = rootState
+      const { entities: { projects } } = rootState
       const { getValues } = getters
       const kanbanlist = getValues('kanbans')
       return Object.assign({}, projects[projectId], { kanbanlist })
@@ -28,7 +28,7 @@ export default {
   },
   actions: {
     ...importProperties(workspace, 'actions'),
-    resetDatabase (context) {
+    resetEntities (context) {
       resetProperties(context, workspace)
     }
   }

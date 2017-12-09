@@ -30,7 +30,7 @@ database schema in frontEnd.
 |  |  |--🗁 schemas    ## api请求数据基本类型以及结构定义，用于数据验证以及补全
 |  |  |--🗁 sockets
 |  |  |--🗁 storage
-|  |  |  |--🗁 database    ## k:y 结构数据存储
+|  |  |  |--🗁 entities    ## k:y 结构数据存储
 |  |  |  |  |--🗎 project.js
 |  |  |  |  |--🗎 kanban.js
 |  |  |  |  |--🗎 kanbanColumn.js
